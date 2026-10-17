@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Form AutoFill Pro</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h2>Form AutoFill</h2>
+            <div class="header-meta">
+                <p class="subtitle">Import & Fill Instantly</p>
+                <span class="wm">by: remdeengg</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <label for="responsesInput">Answer</label>
+                <textarea
+                    id="responsesInput"
+                    placeholder="Paste your answer here&#10;Example:&#10;Name: Budi&#10;use '---' to separate the answers"
+                ></textarea>
+                <button id="importBtn" class="btn btn-primary">
+                    Import Responses
+                </button>
+            </section>
+
+            <hr class="divider">
+
+            <section class="viewer-section">
+                <div class="viewer-header">
+                    <span class="label">Preview Data</span>
+                    <div id="counter">No Data</div>
+                </div>
+                
+                <div id="answerView" class="empty-state">
+                    Nothing.
+                </div>
+            </section>
+
+            <div class="button-group grid-2">
+                <button id="prevBtn" class="btn btn-secondary">◀ Prev</button>
+                <button id="nextBtn" class="btn btn-secondary">Next ▶</button>
+            </div>
+
+            <section class="automation-control">
+                <div class="auto-submit-row">
+                    <input type="checkbox" id="autoSubmitCheck" checked>
+                    <label for="autoSubmitCheck">
+                        Automatic Submit & Answer
+                    </label>
+                </div>
+
+                <div class="delay-control-row" id="delayControlRow">
+                    <label for="iterationDelaySelect" class="delay-label">Jeda Iterasi Selanjutnya:</label>
+                    <select id="iterationDelaySelect" class="delay-select">
+                        <option value="0">Langsung (0 Menit)</option>
+                        <option value="2" selected>2 Menit</option>
+                        <option value="4">4 Menit</option>
+                        <option value="5">5 Menit</option>
+                        <option value="7">7 Menit</option>
+                        <option value="8">8 Menit</option>
+                        <option value="10">10 Menit</option>
+                        <option value="15">15 Menit</option>
+                        <option value="random">Acak (2, 4, 5, 7, 8, 10, 15 Menit)</option>
+                    </select>
+                </div>
+
+                <div id="countdownBanner" class="countdown-banner hidden">
+                    <div class="countdown-info">
+                        <span class="countdown-title" id="countdownTitle">Menunggu iterasi berikutnya...</span>
+                        <span class="countdown-timer" id="countdownTimer">00:00</span>
+                    </div>
+                    <button id="skipWaitBtn" class="btn-skip-wait" title="Lewati jeda dan jalankan sekarang">Jalankan Sekarang</button>
+                </div>
+            </section>
+
+            <div class="button-group" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px;">
+                <button id="fillBtn" class="btn btn-success">Fill Form</button>
+                <button id="stopBtn" class="btn btn-danger" style="background-color: #f43f5e; color: white;">STOP</button>
+                <button id="deleteBtn" class="btn btn-secondary" style="font-size: 0.75rem; padding: 10px 4px;">Del</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-buttons">
+                <button id="clearBtn" class="btn btn-link-danger">Clear All Data</button>
+                <button id="donateBtn" class="btn btn-donate">Donate :]</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="parser.js"></script>
+    <script src="storage.js"></script>
+    <script src="popup.js"></script>
+
+</body>
+</html>
